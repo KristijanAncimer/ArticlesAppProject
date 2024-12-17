@@ -1,0 +1,17 @@
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\bin\Debug\net8.0\ArticlesAppProject.Application.deps.json
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\bin\Debug\net8.0\ArticlesAppProject.Application.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\bin\Debug\net8.0\ArticlesAppProject.Application.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\bin\Debug\net8.0\ArticlesAppProject.Domain.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\bin\Debug\net8.0\ArticlesAppProject.Infrastructure.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\bin\Debug\net8.0\ArticlesAppProject.Domain.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\bin\Debug\net8.0\ArticlesAppProject.Infrastructure.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\ArticlesAppProject.Application.csproj.AssemblyReference.cache
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\ArticlesAppProject.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\ArticlesAppProject.Application.AssemblyInfoInputs.cache
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\ArticlesAppProject.Application.AssemblyInfo.cs
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\ArticlesAppProject.Application.csproj.CoreCompileInputs.cache
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\Articles.667E3616.Up2Date
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\ArticlesAppProject.Application.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\refint\ArticlesAppProject.Application.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\ArticlesAppProject.Application.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Application\obj\Debug\net8.0\ref\ArticlesAppProject.Application.dll

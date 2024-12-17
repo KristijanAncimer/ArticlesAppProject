@@ -1,0 +1,12 @@
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\bin\Debug\net8.0\ArticlesAppProject.Domain.deps.json
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\bin\Debug\net8.0\ArticlesAppProject.Domain.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\bin\Debug\net8.0\ArticlesAppProject.Domain.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\ArticlesAppProject.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\ArticlesAppProject.Domain.AssemblyInfoInputs.cache
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\ArticlesAppProject.Domain.AssemblyInfo.cs
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\ArticlesAppProject.Domain.csproj.CoreCompileInputs.cache
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\ArticlesAppProject.Domain.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\refint\ArticlesAppProject.Domain.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\ArticlesAppProject.Domain.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\ref\ArticlesAppProject.Domain.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Domain\obj\Debug\net8.0\ArticlesAppProject.Domain.csproj.AssemblyReference.cache

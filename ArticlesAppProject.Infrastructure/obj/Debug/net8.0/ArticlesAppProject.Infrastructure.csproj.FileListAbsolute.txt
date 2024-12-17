@@ -1,0 +1,15 @@
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\bin\Debug\net8.0\ArticlesAppProject.Infrastructure.deps.json
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\bin\Debug\net8.0\ArticlesAppProject.Infrastructure.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\bin\Debug\net8.0\ArticlesAppProject.Infrastructure.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\bin\Debug\net8.0\ArticlesAppProject.Domain.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\bin\Debug\net8.0\ArticlesAppProject.Domain.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\ArticlesAppProject.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\ArticlesAppProject.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\ArticlesAppProject.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\ArticlesAppProject.Infrastructure.AssemblyInfo.cs
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\ArticlesAppProject.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\Articles.41D62EC8.Up2Date
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\ArticlesAppProject.Infrastructure.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\refint\ArticlesAppProject.Infrastructure.dll
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\ArticlesAppProject.Infrastructure.pdb
+C:\Users\kristijan\source\repos\ArticlesAppProject.Infrastructure\obj\Debug\net8.0\ref\ArticlesAppProject.Infrastructure.dll
