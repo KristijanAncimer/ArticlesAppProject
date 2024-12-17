@@ -1,0 +1,69 @@
+﻿@using ArticlesAppProject.Application.Handlers.Articles.Queries.GetAll;
+@using ArticlesAppProject.Application.Handlers.Articles.Queries.Helper;
+@model IEnumerable<GetArticlesDto>
+
+@{
+    ViewData["Title"] = "Articles";
+    string filterBy = ViewData["FilterBy"]?.ToString() ?? "All";
+    int sortBy = (int)(ViewData["SortBy"] ?? 0);
+    int pageSize = (int)(ViewData["PageSize"] ?? 10);
+    int pageNumber = (int)(ViewData["PageNumber"] ?? 1);
+}
+
+<h1>Articles</h1>
+
+<form method="get" id="filterForm">
+    <label for="filterBy">Filter By Category:</label>
+    <select id="filterBy" name="filterBy">
+        <option value="All" selected="@(filterBy == "All")">All</option>
+        <option value="Food" selected="@(filterBy == "Food")">Food</option>
+        <option value="Games" selected="@(filterBy == "Games")">Games</option>
+        <option value="Alcohol" selected="@(filterBy == "Alcohol")">Alcohol</option>
+    </select>
+
+    <label for="sortBy">Sort By:</label>
+    <select id="sortBy" name="sortBy">
+        <option value="0" selected="@(sortBy == 0)">Price</option>
+        <option value="1" selected="@(sortBy == 1)">Title</option>
+        <option value="2" selected="@(sortBy == 2)">Category</option>
+    </select>
+
+    <label for="pageSize">Page Size:</label>
+    <input type="number" id="pageSize" name="pageSize" value="@pageSize" min="1" max="50" />
+
+    <label for="pageNumber">Page Number:</label>
+    <input type="number" id="pageNumber" name="pageNumber" value="@pageNumber" min="1" />
+
+    <button type="button" id="filterButton">Filter</button>
+</form>
+
+<div id="articlesTable">
+    @Html.Partial("ArticlesPartial", Model)
+</div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $('#filterButton').click(function () {
+                var filterBy = $('#filterBy').val();
+                var sortBy = $('#sortBy').val();
+                var pageSize = $('#pageSize').val();
+                var pageNumber = $('#pageNumber').val();
+
+                $.ajax({
+                    url: '@Url.Action("Index", "Articles")',
+                    type: 'GET',
+                    data: {
+                        filterBy: filterBy,
+                        sortBy: sortBy,
+                        pageSize: pageSize,
+                        pageNumber: pageNumber
+                    },
+                    success: function (data) {
+                        $('#articlesTable').html($(data).find('#articlesTable').html());
+                    }
+                });
+            });
+        });
+    </script>
+}

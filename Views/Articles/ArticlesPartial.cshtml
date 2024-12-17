@@ -1,0 +1,38 @@
+﻿@using ArticlesAppProject.Application.Handlers.Articles.Queries.GetAll;
+@using ArticlesAppProject.Application.Handlers.Articles.Queries.Helper;
+@model IEnumerable<GetArticlesDto>
+
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Picture</th>
+            <th>Date Created</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var article in Model)
+        {
+            <tr>
+                <td>@article.Id</td>
+                <td>@article.Title</td>
+                <td>@article.Price</td>
+                <td>@article.Categories</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(article.PictureUrl))
+                    {
+                        <img src="@article.PictureUrl" alt="Picture" width="50" height="50" />
+                    }
+                    else
+                    {
+                        <span>No Picture</span>
+                    }
+                </td>
+                <td>@article.DateCreated.ToString("yyyy-MM-dd")</td>
+            </tr>
+        }
+    </tbody>
+</table>

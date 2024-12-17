@@ -1,0 +1,172 @@
+﻿@page
+@model ArticlesAppProject.Controllers.ArticlesController
+
+<h2>Articles</h2>
+
+<!-- Filter Form -->
+<form id="filterForm" method="get">
+    <div class="row mb-3">
+        <!-- Categories Filter -->
+        <div class="col-md-3">
+            <label for="categoriesFilter" class="form-label">Categories</label>
+            <select id="categoriesFilter" name="filterBy" class="form-select" multiple>
+                <option value="1">Food</option>
+                <option value="2">Games</option>
+                <option value="3">Alcohol</option>
+            </select>
+        </div>
+
+        <!-- Sort Options -->
+        <div class="col-md-3">
+            <label for="sortBy" class="form-label">Sort By</label>
+            <select id="sortBy" name="sortBy" class="form-select">
+                <option value="0">Date Created</option>
+                <option value="1">Price</option>
+                <option value="2">Title</option>
+                <option value="3">Category</option>
+            </select>
+        </div>
+
+        <!-- Pagination -->
+        <div class="col-md-2">
+            <label for="pageSize" class="form-label">Page Size</label>
+            <input id="pageSize" name="pageSize" type="number" class="form-control" value="10" min="1">
+        </div>
+        <div class="col-md-2">
+            <label for="pageNumber" class="form-label">Page Number</label>
+            <input id="pageNumber" name="pageNumber" type="number" class="form-control" value="1" min="1">
+        </div>
+
+        <!-- Submit Button -->
+        <div class="col-md-2 align-self-end">
+            <button type="submit" class="btn btn-primary w-100">Filter</button>
+        </div>
+    </div>
+</form>
+
+<!-- Articles Table -->
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Category</th>
+            <th>Date Created</th>
+        </tr>
+    </thead>
+    <tbody id="articlesTableBody">
+        <!-- Data will be dynamically populated -->
+    </tbody>
+</table>
+
+<!-- Add New Article Button -->
+<button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#addArticleModal">
+    Add New Article
+</button>
+
+<!-- Add New Article Modal -->
+<div class="modal fade" id="addArticleModal" tabindex="-1" aria-labelledby="addArticleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addArticleModalLabel">Add New Article</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addArticleForm">
+                    <div class="mb-3">
+                        <label for="articleTitle" class="form-label">Title</label>
+                        <input type="text" class="form-control" id="articleTitle" name="title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="articlePrice" class="form-label">Price</label>
+                        <input type="number" class="form-control" id="articlePrice" name="price" required min="0">
+                    </div>
+                    <div class="mb-3">
+                        <label for="articleCategory" class="form-label">Category</label>
+                        <select class="form-select" id="articleCategory" name="categoryId">
+                            <option value="1">Food</option>
+                            <option value="2">Games</option>
+                            <option value="3">Alcohol</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for AJAX -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        const categoryNames = {
+            1: 'Food',
+            2: 'Games',
+            3: 'Alcohol'
+        };
+
+        // Handle filter form submission
+        $("#filterForm").on("submit", function (e) {
+            e.preventDefault();
+
+            const data = $(this).serialize();
+
+            $.ajax({
+                url: "@Url.Action("Articles", "Articles")", // Dynamically generate URL
+                method: "GET",
+                data: data,
+                dataType: "json", // Expect JSON response
+                beforeSend: function () {
+                    $("#articlesTableBody").html("<tr><td colspan='4' class='text-center'>Loading...</td></tr>");
+                },
+                success: function (response) {
+                    console.log(response); // Log response for debugging
+                    const tableBody = $("#articlesTableBody");
+                    tableBody.empty();
+
+                    if (Array.isArray(response)) {
+                        response.forEach(article => {
+                            tableBody.append(`
+                                    <tr>
+                                        <td>${article.title}</td>
+                                        <td>${article.price}</td>
+                                        <td>${categoryNames[article.categoryId] || "Unknown"}</td>
+                                        <td>${new Date(article.dateCreated).toLocaleString()}</td>
+                                    </tr>
+                                `);
+                        });
+                    } else {
+                        alert("Unexpected response format.");
+                    }
+                },
+                error: function (xhr) {
+                    alert(`Error fetching articles: ${xhr.responseText || "An unknown error occurred."}`);
+                }
+            });
+        });
+
+        // Handle "Add Article" form submission
+        $("#addArticleForm").on("submit", function (e) {
+            e.preventDefault();
+
+            const formData = $(this).serialize();
+
+            $.ajax({
+                url: "@Url.Action("AddArticle", "Articles")", // Dynamically generate URL
+                method: "POST",
+                data: formData,
+                success: function () {
+                    alert("Article added successfully!");
+                    $("#addArticleModal").modal("hide");
+                    $("#addArticleForm")[0].reset(); // Clear the form
+                    $("#filterForm").submit(); // Refresh the table data
+                },
+                error: function (xhr) {
+                    alert(`Failed to add the article: ${xhr.responseText || "An unknown error occurred."}`);
+                }
+            });
+        });
+    });
+</script>
